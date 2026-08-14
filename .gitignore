@@ -1,0 +1,8 @@
+# 构建产物（由 web/build-web.js 生成，不纳入版本管理）
+web/game-bundle.js
+web-dist/
+
+# 临时文件
+*.log
+.DS_Store
+Thumbs.db

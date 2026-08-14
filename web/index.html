@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>仿跳一跳 · Web 预览版</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #2b2b33;
+    touch-action: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  #stage {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #game-canvas {
+    display: block;
+    width: auto;
+    height: min(100vh, calc(100vw * 2));
+    max-width: 100vw;
+    aspect-ratio: 390 / 780;
+    background: #f7f3ea;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.45);
+    touch-action: none;
+  }
+  #hint {
+    position: fixed;
+    top: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(60, 50, 40, 0.6);
+    font: 15px/1.6 -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    pointer-events: none;
+    animation: hintFade 5s ease forwards;
+  }
+  @keyframes hintFade {
+    0%   { opacity: 0; }
+    12%  { opacity: 1; }
+    70%  { opacity: 1; }
+    100% { opacity: 0; }
+  }
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<div id="hint">按住蓄力 · 松开跳跃</div>
+<script src="./game-bundle.js?v=120017"></script>
+</body>
+</html>
