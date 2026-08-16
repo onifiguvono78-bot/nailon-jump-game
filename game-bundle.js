@@ -847,7 +847,8 @@ class PlatformManager {
       check();
 
       // 超时兜底：个别图片加载失败/过慢时最多等待 timeoutMs，之后照常启动
-      setTimeout(finish, timeoutMs || 5000);
+      // （手机弱网下适当放宽，避免贴图还没到就开局）
+      setTimeout(finish, timeoutMs || 15000);
     });
   }
 
