@@ -16,7 +16,9 @@ var modules = {
   canvas.id = 'game-canvas';
   canvas.width = LOGIC_W;
   canvas.height = LOGIC_H;
-  document.body.appendChild(canvas);
+  // 把 canvas 放到 stage 容器里，由 index.html 的 flex 布局居中
+  var stage = document.getElementById('stage') || document.body;
+  stage.appendChild(canvas);
 
   var wx = (globalThis.wx = {});
 
